@@ -20,3 +20,11 @@ sumOfNums = sum[1..1000]
 -- Modulus
 modEx = mod 5 4
 modEx2 = 5 `mod` 4  -- Interprets command as infix rather than prefix notation
+
+negNumEx = 5 + (-4) -- Needs parenthesis so it doesnt get confused about neg operator
+
+-- Type  :t sqrt  to see more about the function
+num9 = 9 :: Int
+sqrtOf9 = sqrt (fromIntegral num9)
+
+-- fromIntegral used to convert from floating point to integer
