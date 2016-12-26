@@ -11,3 +11,12 @@ minInt = minBound :: Int
 -- Double - precision up to 11 points
 -- Bool - True or False
 -- Char - single unicode characters
+-- Tuple - many different data types, usually only two values
+--
+
+-- Sums all values from 1 to 1000.
+sumOfNums = sum[1..1000]
+
+-- Modulus
+modEx = mod 5 4
+modEx2 = 5 `mod` 4  -- Interprets command as infix rather than prefix notation
