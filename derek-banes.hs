@@ -28,3 +28,34 @@ num9 = 9 :: Int
 sqrtOf9 = sqrt (fromIntegral num9)
 
 -- fromIntegral used to convert from floating point to integer
+
+numPi = pi
+truncatedNum = truncate 9.999
+roundedNum = round 9.999
+ceilingNum = ceiling 9.999
+floorNum = floor 9.999
+
+-- also supports sin, cos, tan, asin, sinh, asinh
+
+-- List contruction: : is the cons operator, glues them together into a list
+favNums  = 2 : 4 : 6 : 66 : []
+
+-- Iterate over all even numbers
+evenNumbers = [2,4..20] 
+letterList = ['A'..'Z']
+
+-- Infinite list
+myInfiniteList = [1,2..]
+fromMyInfiniteList = myInfiniteList  !! 5
+
+-- Repeated lists
+--
+repeatedList = repeat 4
+setTenThrees = replicate 10 3
+cycleList = take 10 (cycle [1,2,3])
+
+-- List comprehensions
+listTimes2 = [x * 2 | x <- [1..10]]
+listTimes3 = [x * 3 | x <- [1..30], x * 3 <= 50]
+dividBy9N13 = [x | x <- [1..500], x `mod` 13 == 0, x `mod` 9 == 0]
+
