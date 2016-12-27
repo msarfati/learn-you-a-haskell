@@ -42,3 +42,22 @@ isOdd n
     | otherwise = True
 
 isEven n = n `mod` 2 == 0
+
+
+whatGrade :: Int -> String
+
+whatGrade age
+    | (age >= 5) && (age <= 6) = "Kindergarten"
+    | (age > 6) && (age <= 10) = "Elementary school"
+    | (age > 10) && (age <= 14) = "Middle school"
+    | otherwise = "Go to college"
+
+-- Where clause
+batAvgRating :: Double -> Double -> String
+
+batAvgRating hits atBats
+    | avg <= 0.200 = "Terrible Batting Average"
+    | avg <= 0.250 = "Average"
+    | avg <= 0.280 = "Pretty good"
+    | otherwise = "Superstar"
+    where avg = hits / atBats
