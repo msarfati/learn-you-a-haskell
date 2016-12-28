@@ -92,3 +92,17 @@ areStringsEq :: [Char] -> [Char] -> Bool
 areStringsEq [] [] = True
 areStringsEq (x:xs) (y:ys) = x == y && areStringsEq xs ys
 areStringsEq _ _ = False
+
+-- Passing functions into functions
+doMult :: (Int -> Int) -> Int
+
+doMult func = func 3
+num3Times4 = doMult times4
+
+
+getAddFunc :: Int -> (Int -> Int)
+getAddFunc x y = x + y
+
+adds3 = getAddFunc 3
+
+fourPlus3 = adds3 4
