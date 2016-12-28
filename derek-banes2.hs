@@ -61,3 +61,28 @@ batAvgRating hits atBats
     | avg <= 0.280 = "Pretty good"
     | otherwise = "Superstar"
     where avg = hits / atBats
+
+terribleBatAvg = batAvgRating 20 100
+
+-- Accessing List items
+getListItems :: [Int] -> String
+
+getListItems [] = "Your list is empty"
+getListItems (x:[]) = "Your list starts with " ++ show x
+getListItems (x:y:[]) = "Your list contains" ++ show x ++ " and " ++ show y
+getListItems (x:xs) = "The first is " ++ show x ++ " and rest are " ++ show xs
+
+-- As clause
+getFirstItem :: String -> String
+getFirstItem [] = "Empty string"
+--getFirstItem all@(x:xs) = "The first letter in " ++ all ++ " is " ++ x
+
+times4 :: Int -> Int
+times4 x = x * 4
+
+-- Map
+listTimes4 = map times4 [1,2,3,4,5]
+
+multBy4 :: [Int] -> [Int]
+multBy4 [] = []
+multBy4 (x:xs) = times4 x: multBy4 xs
