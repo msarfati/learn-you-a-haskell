@@ -28,3 +28,7 @@ listCompDiffLists = [x+y | x <- [1,2,3], y <- [10,100,1000]]
 nouns = ["hobo","frog","pope"]
 adjectives = ["lazy", "grouchy", "scheming"]
 wordStew = [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
+
+length' xs = sum [1 | _ <- xs]
+
+removeNonUppercase st = [c | c <- st, c `elem` ['A'..'Z']]
