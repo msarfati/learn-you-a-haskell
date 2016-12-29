@@ -32,3 +32,17 @@ wordStew = [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
 length' xs = sum [1 | _ <- xs]
 
 removeNonUppercase st = [c | c <- st, c `elem` ['A'..'Z']]
+
+-- Tuples
+myTupleList = [(1,2), (3,4), (5,6)]
+-- This raises an exception:
+-- [(1,2), (1,2,3), (1,2)] All tuples in list must be of the same length
+
+myZip = zip [1,2,3] [4,5,6]
+myZip2 = zip [1..3] ["one", "two", "three"]
+
+-- All possible triangles between ranges 1 and 10
+triples = [(a,b,c) | c <- [1..10], a <- [1..10], b <- [1..10]]
+-- All combinations of Pythagorean theorem friendly triangles:
+rightTriangles = [(a,b,c) | c <- [1..10], a <- [1..c], b <- [1..a], a^2 + b^2 == c^2]
+rightTriangles' = [(a,b,c) | c <- [1..10], a <- [1..c], b <- [1..a], a^2 + b^2 == c^2, a+b+c == 24]
