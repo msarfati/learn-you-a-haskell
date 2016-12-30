@@ -34,8 +34,17 @@ readTuple = read "(3, 'a')" :: (Int, Char)
 
 -- Enum type class
 exEnum = [1..10]
-exEnum2 = [LT..GT]
+exEnum2 = [LT .. GT]
 succeedB = succ 'B'
 
 -- Bounded type classes
+minInt = minBound :: Int
+maxChar = maxBound :: Char
+maxBool = maxBound :: Bool
+minBool = minBound :: Bool
 
+-- putStrLn shows you the interpreted form of a unicode character
+--
+-- Num type class - Covers Int, Integer, Float and Double
+-- Integrals are only whole number
+--
