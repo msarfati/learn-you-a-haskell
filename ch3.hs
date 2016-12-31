@@ -86,7 +86,7 @@ a `myCompare` b
 
 -- Where scope
 -- Here it needs to pull from global scope because where bindings aren't shared
--- across function bodies of different patterns
+-- across function bodies of different patterns.
 
 niceGreeting :: String
 niceGreeting = "Hello"
@@ -98,3 +98,10 @@ greet :: String -> String
 greet "John" = niceGreeting ++ " John!"
 greet "Mary" = niceGreeting ++ " Mary!"
 greet name = badGreeting ++ " " ++ name
+
+-- Where Pattern Matching
+initials :: String -> String -> String
+initials firstname lastname = [f] ++ ". " ++ [l] ++ "."
+    where (f:_) = firstname
+          (l:_) = lastname
+jc_denton_initials = initials "JC" "Denton"
