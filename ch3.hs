@@ -125,4 +125,18 @@ multiLetExample = (let a = 100; b = 200; c = 300 in a*b*c, let foo="Hey "; bar =
 multiLetExample2 = (let (a,b,c) = (1,2,3) in a+b+c) * 100
 
 -- Let expressions are local in scope, cannot be used against guards
+-- Where is preferred to Let because Where bindings appear after the function, instead of before.
+-- For improved readability
 --
+-- Let in List comprehensions
+
+calcBmis' :: [(Double, Double)] -> [Double]
+calcBmis' xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2]
+
+-- Case expressions
+--
+
+describeList :: [a] -> String
+describeList ls = "The list is " ++ case ls of [] -> "empty."
+                                               [x] -> "a singleton list"
+                                               xs -> "A longer list."
