@@ -105,3 +105,24 @@ initials firstname lastname = [f] ++ ". " ++ [l] ++ "."
     where (f:_) = firstname
           (l:_) = lastname
 jc_denton_initials = initials "JC" "Denton"
+
+-- Functions in where blocks
+
+calcBmis :: [(Double, Double)] -> [Double]
+calcBmis xs = [bmi w h | (w, h) <- xs]
+    where bmi weight height = weight / height ^ 2
+
+-- Let expressions
+cylinder :: Double -> Double -> Double
+cylinder r h =
+    let sideArea = 2 * pi * r * h
+        topArea = pi * r ^ 2
+    in sideArea + 2 * topArea
+
+letExample = 4 * (let a = 9 in a + 1) + 2
+letExample2 = [let square x = x * x in (square 5, square 3, square 2)]
+multiLetExample = (let a = 100; b = 200; c = 300 in a*b*c, let foo="Hey "; bar = "there!" in foo ++ bar)
+multiLetExample2 = (let (a,b,c) = (1,2,3) in a+b+c) * 100
+
+-- Let expressions are local in scope, cannot be used against guards
+--
