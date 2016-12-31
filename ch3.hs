@@ -35,3 +35,25 @@ head' (x:_) = x
 firstLetter :: String -> String
 firstLetter "" = "Empty str!"
 firstLetter all@(x:xs) = "First letter of " ++ all ++ " is " ++ [x]
+
+-- Guards
+--
+bmiTell :: Double -> String
+bmiTell bmi
+    | bmi <= 18.5 = "Underweight."
+    | bmi <= 25.0 = "Good."
+    | bmi <= 30.0 = "Overweight"
+    | otherwise = "Obese."
+
+bmiTell' :: Double -> Double -> String
+bmiTell' weight height
+    | weight / height ^ 2 <= 18.5 = "Underweight."
+    | weight / height ^ 2 <= 25.0 = "Good."
+    | weight / height ^ 2 <= 30.0 = "Overweight"
+    | otherwise = "Obese."
+
+
+max' :: (Ord a) => a -> a -> a
+max' a b
+    | a <= b    = b
+    | otherwise = a
