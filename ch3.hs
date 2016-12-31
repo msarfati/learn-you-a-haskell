@@ -52,6 +52,26 @@ bmiTell' weight height
     | weight / height ^ 2 <= 30.0 = "Overweight"
     | otherwise = "Obese."
 
+-- Guards with Where
+bmiTell'' :: Double -> Double -> String
+bmiTell'' weight height
+    | bmi <= 18.5 = "Underweight."
+    | bmi <= 25.0 = "Good."
+    | bmi <= 30.0 = "Overweight"
+    | otherwise = "Obese."
+    where bmi = weight / height ^ 2
+
+-- Guards with Where again, defining more variables after the guards
+bmiTell''' :: Double -> Double -> String
+bmiTell''' weight height
+    | bmi <= skinny = "Underweight."
+    | bmi <= normal = "Good."
+    | bmi <= overweight = "Overweight"
+    | otherwise = "Obese."
+    where bmi = weight / height ^ 2
+          skinny    = 18.5
+          normal    = 25.0
+          overweight= 30.0
 
 max' :: (Ord a) => a -> a -> a
 max' a b
@@ -63,3 +83,18 @@ a `myCompare` b
     | a == b    = EQ
     | a <= b    = LT
     | otherwise = GT
+
+-- Where scope
+-- Here it needs to pull from global scope because where bindings aren't shared
+-- across function bodies of different patterns
+
+niceGreeting :: String
+niceGreeting = "Hello"
+
+badGreeting :: String
+badGreeting = "Pfft"
+
+greet :: String -> String
+greet "John" = niceGreeting ++ " John!"
+greet "Mary" = niceGreeting ++ " Mary!"
+greet name = badGreeting ++ " " ++ name
