@@ -140,3 +140,11 @@ describeList :: [a] -> String
 describeList ls = "The list is " ++ case ls of [] -> "empty."
                                                [x] -> "a singleton list"
                                                xs -> "A longer list."
+
+-- Some toy examples
+-- Guards
+gender :: Char -> String
+gender x
+    | x == 'f' = "Female"
+    | x == 'm' = "Male"
+    | otherwise = "Other"
