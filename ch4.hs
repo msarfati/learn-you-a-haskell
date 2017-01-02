@@ -52,3 +52,14 @@ elem' a [] = False
 elem' a (x:xs)
     | a == x    = True
     | otherwise = a `elem'` xs
+
+-- Quicksort
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) =
+    let smallerOrEqual = [a | a <- xs, a <= x]
+        larger = [a | a <- xs, a > x]
+    in quicksort smallerOrEqual ++ [x] ++ quicksort larger
+
+alphabetSorted = quicksort "the quick brown fox jumped over the lazy dog"
+sortedNumbers = quicksort [7,5,3,2,6,7,0,32,3,-34,-3,0]
