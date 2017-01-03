@@ -54,3 +54,10 @@ increment' = (\x -> \y -> x + y) 1
 additionResult :: Int
 additionResult = plus 100 25
 
+-- My examples
+
+sub :: Int -> Int -> Int
+sub x y = x - y
+
+sub' :: Int -> Int -> Int
+sub' = \x -> \y -> x - y
