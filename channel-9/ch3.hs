@@ -1,5 +1,7 @@
 -- Channel 9 Erik Meijer Chapter 3
--- Type Signatures
+-- Function Signatures and Types
+-- You can always get the type signature by typing :t or :type and then the name of
+-- the function
 
 myFunc :: (Int, Int) -> Bool
 myFunc (1, 2) = True
@@ -41,3 +43,11 @@ length' x = length x
 
 trd :: (a, b, c) -> c
 trd (a, b, c) = c
+
+-- Exercises
+second xs = head (tail xs)
+swap (x, y) = (y, x)
+pair x y = (x, y)
+double x = x*2
+palindrome xs = reverse xs == xs
+twice f x = f (f x)
