@@ -1,4 +1,5 @@
 -- Channel 9 Erik Meijer Chapter 3
+-- Type Signatures
 
 myFunc :: (Int, Int) -> Bool
 myFunc (1, 2) = True
@@ -25,3 +26,18 @@ addLambda' = \x -> \y -> x + y
 addLambda :: (Int, Int) -> Int
 addLambda = \(x,y) -> x+y
 
+mult :: Int -> Int -> Int -> Int
+mult x y z = x * y * z
+
+-- 'a' in the following example is a type variable, may stand for any type
+-- 'a' is considered polymorphic, or generic
+goLeet :: a -> Int
+goLeet x = 1337
+
+length' :: [a] -> Int
+length' x = length x
+
+-- Get third element in tuple
+
+trd :: (a, b, c) -> c
+trd (a, b, c) = c
